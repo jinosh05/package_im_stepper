@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'stepper.dart';
 
 void main() {
-  runApp(IconStepperDemo());
+  runApp(const IconStepperDemo());
 }
 
 class IconStepperDemo extends StatefulWidget {
+  const IconStepperDemo({super.key});
+
   @override
-  _IconStepperDemo createState() => _IconStepperDemo();
+  State<IconStepperDemo> createState() => IconStepperDemoState();
 }
 
-class _IconStepperDemo extends State<IconStepperDemo> {
+class IconStepperDemoState extends State<IconStepperDemo> {
   // THE FOLLOWING TWO VARIABLES ARE REQUIRED TO CONTROL THE STEPPER.
   int activeStep = 5; // Initial step set to 5.
 
@@ -23,14 +25,14 @@ class _IconStepperDemo extends State<IconStepperDemo> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('IconStepper Example'),
+          title: const Text('IconStepper Example'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               IconStepper(
-                icons: [
+                icons: const [
                   Icon(Icons.supervised_user_circle),
                   Icon(Icons.flag),
                   Icon(Icons.access_alarm),
@@ -43,7 +45,7 @@ class _IconStepperDemo extends State<IconStepperDemo> {
                 // activeStep property set to activeStep variable defined above.
                 activeStep: activeStep,
 
-                // This ensures step-tapping updates the activeStep. 
+                // This ensures step-tapping updates the activeStep.
                 onStepReached: (index) {
                   setState(() {
                     activeStep = index;
@@ -83,7 +85,7 @@ class _IconStepperDemo extends State<IconStepperDemo> {
           });
         }
       },
-      child: Text('Next'),
+      child: const Text('Next'),
     );
   }
 
@@ -98,7 +100,7 @@ class _IconStepperDemo extends State<IconStepperDemo> {
           });
         }
       },
-      child: Text('Prev'),
+      child: const Text('Prev'),
     );
   }
 
@@ -115,7 +117,7 @@ class _IconStepperDemo extends State<IconStepperDemo> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               headerText(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),

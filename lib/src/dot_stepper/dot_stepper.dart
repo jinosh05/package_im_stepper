@@ -68,6 +68,7 @@ class DotStepper extends StatefulWidget {
   final OnDotTapped? onDotTapped;
 
   DotStepper({
+    super.key,
     required this.activeStep,
     this.dotCount = 2,
     this.dotRadius = 24,
@@ -95,10 +96,10 @@ class DotStepper extends StatefulWidget {
   }
 
   @override
-  _DotStepperState createState() => _DotStepperState();
+  DotStepperState createState() => DotStepperState();
 }
 
-class _DotStepperState extends State<DotStepper>
+class DotStepperState extends State<DotStepper>
     with SingleTickerProviderStateMixin {
   /// The controller which handles the animations.
   AnimationController? _animationController;
@@ -129,7 +130,7 @@ class _DotStepperState extends State<DotStepper>
   @override
   void initState() {
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       vsync: this,
     )..addListener(() {
         setState(() {});

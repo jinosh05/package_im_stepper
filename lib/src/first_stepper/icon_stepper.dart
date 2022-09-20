@@ -74,7 +74,8 @@ class IconStepper extends StatelessWidget {
   final AlignmentGeometry alignment;
 
   /// Creates an IconStepper widget.
-  IconStepper({
+  const IconStepper({
+    super.key,
     this.icons,
     this.enableNextPreviousButtons = true,
     this.enableStepTapping = true,
@@ -103,7 +104,6 @@ class IconStepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseStepper(
-      children: _iconsWithSizeOverridden(),
       nextPreviousButtonsDisabled: enableNextPreviousButtons,
       stepTappingDisabled: enableStepTapping,
       previousButtonIcon: previousButtonIcon,
@@ -126,6 +126,7 @@ class IconStepper extends StatelessWidget {
       scrollingDisabled: scrollingDisabled,
       activeStep: activeStep,
       alignment: alignment,
+      children: _iconsWithSizeOverridden(),
     );
   }
 

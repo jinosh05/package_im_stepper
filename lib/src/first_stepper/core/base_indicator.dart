@@ -20,7 +20,7 @@ class BaseIndicator extends StatelessWidget {
   final Color? activeBorderColor;
 
   /// The border width of this indicator when it is selected.
-  final activeBorderWidth;
+  final double activeBorderWidth;
 
   /// Radius of this indicator.
   final double radius;
@@ -31,7 +31,8 @@ class BaseIndicator extends StatelessWidget {
   /// The amount of margin around each side of the indicator.
   final double margin;
 
-  BaseIndicator({
+  const BaseIndicator({
+    super.key,
     this.isSelected = false,
     this.child,
     this.onPressed,
